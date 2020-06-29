@@ -11,17 +11,14 @@ import com.company.codeserver.exceptions.FoundException;
 import com.company.codeserver.exceptions.NotFoundException;
 import com.company.codeserver.exceptions.SdlcConflictException;
 import com.company.codeserver.services.ProjectService;
-import com.company.codeserver.util.JsonMergePatchUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -52,7 +49,6 @@ public class ProjectRestController {
   @Autowired
   private ProjectService projectService;
   private ObjectMapper objectMapper=new ObjectMapper();
-  private JsonMergePatchUtil JsonMergePatchUtils;
 
   @ApiOperation("Get a Project")
   @GetMapping(ENDPOINT_ID)

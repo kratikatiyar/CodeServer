@@ -71,7 +71,7 @@ public class ProjectServiceImpl implements ProjectService {
 			projectToBePatched.setCreatedDate(project.getCreatedDate());
 		if(req.has("sdlcSystem") && req.get("sdlcSystem")!=null){
 			SdlcSystem sdlcSystem=sdlcSystemRepository.findById(projectToBePatched.getSdlcSystem().getId()).orElseThrow(()->
-					 new NotFoundException(SdlcSystem.class,projectToBePatched.getSdlcSystem().getId()));/
+					 new NotFoundException(SdlcSystem.class,projectToBePatched.getSdlcSystem().getId()));
 			projectToBePatched.setSdlcSystem(sdlcSystem);
 		}
 		return projectRepository.save(projectToBePatched);
